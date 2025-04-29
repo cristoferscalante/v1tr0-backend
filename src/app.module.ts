@@ -12,9 +12,12 @@ import { NotificacionModule } from './notificacion/notificacion.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), // carga .env automáticamente
-    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://localhost:27017/v1tro_db', {
-      dbName: 'v1tro_db',
-    }),
+    MongooseModule.forRoot(
+      process.env.MONGO_URI || 'mongodb://localhost:27017/v1tro_db',
+      {
+        dbName: 'v1tro_db',
+      },
+    ),
     UsuarioModule,
     ProyectoModule,
     TareaModule,
